@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 23:46:28 by jgomes-c          #+#    #+#             */
-/*   Updated: 2022/01/12 23:46:28 by jgomes-c         ###   ########.fr       */
+/*   Created: 2022/01/27 18:40:45 by jgomes-c          #+#    #+#             */
+/*   Updated: 2022/01/27 18:40:45 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/pushswap.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
+int	ft_isdigit_char(char *c, t_box *box)
+{
+	int	i;
 
-# include "./struct.h"
-# include "./libft/libft.h"
-
-int	ft_isdigit_char(char *c, t_box *box);
-
-#endif
+	i = 0;
+	if (c[i] == '-' || c[i] == '+')
+		i++;
+	while (c[i] != '\0')
+	{
+		if (c[i] >= '0' && c[i] <= '9')
+			i++;
+		else
+		{
+			ft_putendl_fd("Error", 1);
+			free(box->stack_a);
+			free(box->stack_b);
+			exit(0);
+		}
+	}
+	return (1);
+}

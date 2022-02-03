@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 23:46:28 by jgomes-c          #+#    #+#             */
-/*   Updated: 2022/01/12 23:46:28 by jgomes-c         ###   ########.fr       */
+/*   Created: 2022/01/27 19:28:05 by jgomes-c          #+#    #+#             */
+/*   Updated: 2022/01/27 19:28:05 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	void	*nn;
 
-# include "./struct.h"
-# include "./libft/libft.h"
-
-int	ft_isdigit_char(char *c, t_box *box);
-
-#endif
+	nn = malloc(nmemb * size);
+	if (nn == NULL)
+		return (NULL);
+	ft_bzero(nn, nmemb * size);
+	return (nn);
+}

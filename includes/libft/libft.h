@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 23:46:28 by jgomes-c          #+#    #+#             */
-/*   Updated: 2022/01/12 23:46:28 by jgomes-c         ###   ########.fr       */
+/*   Created: 2022/01/27 19:27:28 by jgomes-c          #+#    #+#             */
+/*   Updated: 2022/01/27 19:27:28 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include "../pushswap.h"
+# include "../struct.h"
 
-# include "./struct.h"
-# include "./libft/libft.h"
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
-int	ft_isdigit_char(char *c, t_box *box);
+size_t	ft_strlen(const char *s);
+void	ft_bzero(void *s, size_t len);
+void	*ft_calloc(size_t nmemb, size_t size);
+void	ft_putendl_fd(char *s, int fd);
 
 #endif

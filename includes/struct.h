@@ -26,6 +26,7 @@ typedef struct s_box
 {
 	t_list *stack_a;
 	t_list *stack_b;
+	int		limit; //limite para o argv
 } t_box;
 
 

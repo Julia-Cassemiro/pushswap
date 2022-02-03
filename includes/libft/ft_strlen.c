@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 23:46:28 by jgomes-c          #+#    #+#             */
-/*   Updated: 2022/01/12 23:46:28 by jgomes-c         ###   ########.fr       */
+/*   Created: 2022/01/27 19:27:44 by jgomes-c          #+#    #+#             */
+/*   Updated: 2022/01/27 19:27:44 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
 
-# include "./struct.h"
-# include "./libft/libft.h"
-
-int	ft_isdigit_char(char *c, t_box *box);
-
-#endif
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
