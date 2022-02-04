@@ -28,13 +28,14 @@ static int ft_create_stack(t_list **head, char **argv, t_box *box)
 {
 	t_list *temp; //pra q?
 	int i;
-	int t_num;
+	//int t_num;
 
 	temp = *head; //nossa temporaria recebe &box.stack_a
 	i = 1;
 	count_argv(argv, box);
 	while (argv[i] != NULL && ft_isdigit_char(argv[i], box) == 1)
 	{
+		temp++;
 		i++;
 	}
 	return (1);
@@ -57,18 +58,18 @@ int main(int argc, char **argv)
 	
 }
 
-t_box *new_list(int number)
-{
-	t_list *new;
+// t_box *new_list(int number)
+// {
+// 	t_list *new;
 
-	new = (t_list *)ft_calloc(1, sizeof(t_list)); //1 variáve ​​a ser alocada na memória e o tamanho em bytes dessa variavel
-	if (new == NULL)
-		exit(2);
+// 	new = (t_list *)ft_calloc(1, sizeof(t_list)); //1 variáve ​​a ser alocada na memória e o tamanho em bytes dessa variavel
+// 	if (new == NULL)
+// 		exit(2);
 	
-	new->next = NULL;
-	new->value = number;
+// 	new->next = NULL;
+// 	new->value = number;
 
-}
+// }
 
 static void ft_initialise(t_box *box)
 {

@@ -11,12 +11,11 @@
 # **************************************************************************** #
 
 P_SRC = ./src/
-P_UTILS = $(P_SRC)utils/
 P_LIBFT = ./includes/libft/
 P_OBJ = ./obj/
 P_INCLUDE = ./includes/
 
-FILES = $(P_SRC)main.c $(P_UTILS) \
+FILES = $(P_SRC)main.c $(P_SRC)utils.c \
 		
 SRC = $(patsubst $(P_SRC)%.c, $(P_OBJ)%.o, $(FILES))
 
