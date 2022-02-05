@@ -18,7 +18,7 @@ P_OBJ = ./obj/
 P_INCLUDE = ./includes/
 
 FILES = $(P_SRC)main.c $(P_UTI)utils0.c $(P_UTI)utils1.c \
-		$(P_MOV)move_ss.c $(P_MOV)move_rr.c
+		$(P_MOV)move_ss.c $(P_MOV)move_rr.c $(P_MOV)move_rrr.c
 		
 SRC = $(patsubst $(P_SRC)%.c, $(P_OBJ)%.o, $(FILES))
 
