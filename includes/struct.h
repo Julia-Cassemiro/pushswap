@@ -18,7 +18,7 @@
 typedef struct s_list
 {
 	struct s_list	*next;	//proximo bit, node
-	int		value;	//numero q vai ta no node, separar os numeros por caixinha
+	int		value;	//o numero q clc dentro da lista
 
 } t_list;
 
@@ -26,7 +26,10 @@ typedef struct s_box
 {
 	t_list *stack_a;
 	t_list *stack_b;
+	int 	size_a;	//tamanho da stack_a
+	int 	size_b;	//tamanho da stack_b
 	int		limit; //limite para o argv
+	int		movements; //movimentos para troca
 } t_box;
 
 

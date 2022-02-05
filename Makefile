@@ -11,11 +11,14 @@
 # **************************************************************************** #
 
 P_SRC = ./src/
+P_UTI = ./src/utils/
+P_MOV = ./src/movements/
 P_LIBFT = ./includes/libft/
 P_OBJ = ./obj/
 P_INCLUDE = ./includes/
 
-FILES = $(P_SRC)main.c $(P_SRC)utils.c \
+FILES = $(P_SRC)main.c $(P_UTI)utils0.c $(P_UTI)utils1.c \
+		$(P_MOV)move_ss.c
 		
 SRC = $(patsubst $(P_SRC)%.c, $(P_OBJ)%.o, $(FILES))
 
@@ -38,6 +41,7 @@ $(NAME): $(SRC)
 $(P_OBJ)%.o: $(P_SRC)%.c
 	@mkdir -p $(P_OBJ)
 	@mkdir -p $(P_OBJ)utils
+	@mkdir -p $(P_OBJ)movements
 	@$(CC) $(CFLAGS) -I. -c $< -o $@
 
 #VALGRIND--|

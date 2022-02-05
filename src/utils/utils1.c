@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 18:40:45 by jgomes-c          #+#    #+#             */
-/*   Updated: 2022/01/27 18:40:45 by jgomes-c         ###   ########.fr       */
+/*   Created: 2022/02/05 00:33:07 by jgomes-c          #+#    #+#             */
+/*   Updated: 2022/02/05 00:33:07 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pushswap.h"
+#include "../../includes/pushswap.h"
 
-int	ft_isdigit_char(char *c, t_box *box)
+
+int	check_if_complete(t_box *box)
 {
-	int	i;
+	t_list	*temp;
+	int		ant_num;
 
-	i = 0;
-	if (c[i] == '-' || c[i] == '+')
-		i++;
-	while (c[i] != '\0')
+	ant_num = 0;
+	temp = box->stack_a;
+	while (temp->next)
 	{
-		if (c[i] >= '0' && c[i] <= '9')
-			i++;
-		else
+		ant_num = temp->value;
+		temp = temp->next;
+		if (ant_num > temp->value) //se for maior q o da frente, n ta organizado
 		{
-			ft_putendl_fd("Error", 1);
-			free(box->stack_a);
-			free(box->stack_b);
-			exit(0);
+			printf("n foi na ordem");
+
+			return (0);
 		}
 	}
+	printf("foi na ordem ja");
+	free_stack(box);
+	exit(1);
 	return (1);
 }

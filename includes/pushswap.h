@@ -20,6 +20,12 @@
 # include "./struct.h"
 # include "./libft/libft.h"
 
-int	ft_isdigit_char(char *c, t_box *box);
+int 	main(int argc, char **argv);
+int		check_list(t_box *box, int box_num);
+int		ft_isdigit_char(char *c, t_box *box);
+void	free_stack(t_box *box);
+int		ft_atoi(const char *str, t_box *box);
+t_list	*new_box(int numb);
+int	check_if_complete(t_box *box);
 
 #endif
