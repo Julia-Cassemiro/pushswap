@@ -67,6 +67,7 @@ static void	initialize(t_box *box)
 	box->stack_a = new_box(0);
 	box->stack_b = new_box(0);
 	box->size_a = 0;
+	box->size_b = 0;
 }
 
 static void	count_argv(char **argv, t_box *box)
