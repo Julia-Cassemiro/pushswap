@@ -19,7 +19,7 @@ void	move_sa(t_box *box)
 	t_list *temp;
 	t_list *aux;
 
-	if (box->size_a <= 1)
+	if (box->size_a <= 0)
 		return ;
 	temp = new_box(0);
 	aux = box->stack_a;

@@ -13,13 +13,17 @@
 P_SRC = ./src/
 P_UTI = ./src/utils/
 P_MOV = ./src/movements/
+P_ALG = ./src/algorithms/
 P_LIBFT = ./includes/libft/
 P_OBJ = ./obj/
 P_INCLUDE = ./includes/
 
 FILES = $(P_SRC)main.c $(P_UTI)utils0.c $(P_UTI)utils1.c \
-		$(P_MOV)move_ss.c $(P_MOV)move_rr.c $(P_MOV)move_rrr.c
+		$(P_MOV)move_ss.c $(P_MOV)move_rr.c $(P_MOV)move_rrr.c \
+		$(P_MOV)move_p.c \
+		$(P_ALG)small.c $(P_ALG)utils.c \
 		
+
 SRC = $(patsubst $(P_SRC)%.c, $(P_OBJ)%.o, $(FILES))
 
 LIBFT = $(P_LIBFT)libft.a
@@ -42,6 +46,7 @@ $(P_OBJ)%.o: $(P_SRC)%.c
 	@mkdir -p $(P_OBJ)
 	@mkdir -p $(P_OBJ)utils
 	@mkdir -p $(P_OBJ)movements
+	@mkdir -p $(P_OBJ)algorithms
 	@$(CC) $(CFLAGS) -I. -c $< -o $@
 
 #VALGRIND--|

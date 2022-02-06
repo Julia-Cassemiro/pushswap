@@ -30,6 +30,13 @@ typedef struct s_box
 	int 	size_b;	//tamanho da stack_b
 	int		limit; //limite para o argv
 	int		movements; //movimentos para troca
+	int		top; //1 da lista
+	int		mid; //debaixo do 1 da lista
+	int		bottom; //debaixo devaixo
+	int		first; //1 da lista
+	int		last; //proximo da lista do first
+	int 	min; //minima da lista
+	int 	max; //maxima da lista
 } t_box;
 
 
