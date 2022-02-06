@@ -48,7 +48,7 @@ void free_stack(t_box *box)
 		}
 	}
 	free(box->stack_a);	 // ele ta olhando a proxima, ent ele para no ultimo, pq ele achou o null e n vai conseguir executar a ultia vez
-	if (box->size_b > 1) // se o b tem mais de um conteudo
+	if (box->size_b > 0) // se o b tem mais de um conteudo
 	{
 		temp = box->stack_b;
 		while (temp->next)

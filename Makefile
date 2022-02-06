@@ -21,7 +21,8 @@ P_INCLUDE = ./includes/
 FILES = $(P_SRC)main.c $(P_UTI)utils0.c $(P_UTI)utils1.c \
 		$(P_MOV)move_ss.c $(P_MOV)move_rr.c $(P_MOV)move_rrr.c \
 		$(P_MOV)move_p.c \
-		$(P_ALG)small.c $(P_ALG)utils.c \
+		$(P_ALG)small.c $(P_ALG)small_utils.c \
+		$(P_ALG)big.c $(P_ALG)big_utils0.c $(P_ALG)big_utils1.c \
 		
 
 SRC = $(patsubst $(P_SRC)%.c, $(P_OBJ)%.o, $(FILES))

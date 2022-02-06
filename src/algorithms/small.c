@@ -108,7 +108,7 @@ void	five_cont_one(t_box *box)
 	t_list	*temp;
 
 	temp = box->stack_a;
-	while (box->size_b <= 2)
+	while (box->size_b <= 1)
 	{
 		if (temp->value == box->min || temp->value == box->max)
 		{

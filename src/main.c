@@ -19,44 +19,24 @@ static void count_argv(char **argv, t_box *box);
 int main(int argc, char **argv)
 {
 	t_box box;
-	// t_list	*temp;
-	t_list	*temp_a;
-	t_list	*temp_b;	
+	t_list *temp;
 
 	if (argc <= 2)
 		exit(1);
 	initialize(&box);
 	create_stack(&box, argv);
 	check_if_complete(&box); // ela vai ver se ja ta organizado, do menor para o maior
-	temp_a = box.stack_a;
-	temp_b = box.stack_b;
-	while (temp_a != NULL)
+	if (argc <= 6)
+		index_small(&box);
+	temp = box.stack_a;
+	while (temp != NULL)
 	{
-		printf("antes A: %d\n", temp_a->value);
-		temp_a = temp_a->next;
+		printf("antes A: %d\n", temp->value);
+		temp = temp->next;
 	}
-	while (temp_b != NULL)
-	{
-		printf("antes B: %d\n", temp_b->value);
-		temp_b = temp_b->next;
-	}
-	move_pb(&box);
-	temp_a = box.stack_a;
-	temp_b = box.stack_b;
-	while (temp_a != NULL)
-	{
-		printf("depois A: %d\n", temp_a->value);
-		temp_a = temp_a->next;
-	}
-	while (temp_b != NULL)
-	{
-		printf("depois B: %d\n", temp_b->value);
-		temp_b = temp_b->next;
-	}
-	// if (argc <= 6)
-	// 	index_small(&box);
 	// else
 	// 	big_stack(&box);
+	free_stack(&box);
 	exit(0);
 }
 
