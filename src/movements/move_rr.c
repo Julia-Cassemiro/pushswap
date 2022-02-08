@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pushswap.h"
+#include "../../includes/push_swap.h"
 
 void	rotate(t_list **box);
 

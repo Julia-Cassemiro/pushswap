@@ -10,11 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pushswap.h"
-
-
-void	five_cont_one(t_box *box);
-void	five_cont_two(t_box *box, t_list *temp);
+#include "../../includes/push_swap.h"
 
 void	three_numbers(t_box *box)
 {
@@ -46,11 +42,9 @@ void	four_numbers(t_box *box)
 	max = get_max(box, 0);
 	if (box->stack_a->value == min || box->stack_a->value == max)
 		move_pb(box);
-	else if (box->stack_a->next->value == min || box->stack_a->next->value == max)
-	{
-		move_sa(box);
-		move_pb(box);
-	}
+	else if (box->stack_a->next->value == min
+		|| box->stack_a->next->value == max)
+		move_aux(box);
 	else
 	{
 		move_rra(box, 0);
@@ -72,10 +66,10 @@ void	five_numbers(t_box *box)
 
 	box->min = get_min(box);
 	box->max = get_max(box, 0);
-	five_cont_one(box); // envia os dois primeiros números da pilha A para a pilha B.
-	three_numbers(box); // usa a lógica de 3 números aleatórios para classificar os números em A.
+	five_cont_one(box);
+	three_numbers(box);
 	temp = box->stack_b;
-	five_cont_two(box, temp); // certifica-se de que a pilha A pode aceitar corretamente os números da pilha B.
+	five_cont_two(box, temp);
 }
 
 void	five_cont_two(t_box *box, t_list *temp)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pushswap.h"
+#include "../../includes/push_swap.h"
 
 void	move_rra(t_box *box, int info)
 {
@@ -20,7 +20,7 @@ void	move_rra(t_box *box, int info)
 
 	aux = box->stack_a;
 	temp = aux;
-	while (aux->next->next) //é o proximo do proximo, ent para na penultima
+	while (aux->next->next)
 		aux = aux->next;
 	last = aux->next;
 	aux->next = NULL;

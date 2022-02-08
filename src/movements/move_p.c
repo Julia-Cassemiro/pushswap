@@ -10,26 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pushswap.h"
+#include "../../includes/push_swap.h"
 
 void	aux_move_pb(t_box *box, t_list *new_stack, t_list *aux);
 void	aux_move_pa(t_box *box, t_list *new_stack, t_list *aux);
 
-void move_pb(t_box *box)
+void	move_pb(t_box *box)
 {
-	t_list *aux;
-	t_list *new_stack;
+	t_list	*aux;
+	t_list	*new_stack;
 
 	if (box->stack_b == NULL)
 		box->stack_b = new_box(0);
 	if (box->size_a == 0)
-		return;
+		return ;
 	aux = box->stack_a;
 	new_stack = aux->next;
 	if (box->size_b == 0)
 	{
 		aux_move_pb(box, new_stack, aux);
-		return;
+		return ;
 	}
 	aux->next = NULL;
 	aux->next = box->stack_b;
@@ -41,7 +41,7 @@ void move_pb(t_box *box)
 	write(1, "pb\n", 3);
 }
 
-void aux_move_pb(t_box *box, t_list *new_stack, t_list *aux)
+void	aux_move_pb(t_box *box, t_list *new_stack, t_list *aux)
 {
 	box->stack_b->value = aux->value;
 	box->stack_a = new_stack;
@@ -51,7 +51,7 @@ void aux_move_pb(t_box *box, t_list *new_stack, t_list *aux)
 	box->size_a--;
 	box->movements++;
 	write(1, "pb\n", 3);
-	return;
+	return ;
 }
 
 void	move_pa(t_box *box)

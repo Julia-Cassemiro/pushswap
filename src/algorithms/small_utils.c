@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pushswap.h"
+#include "../../includes/push_swap.h"
 
 void	index_small(t_box *box)
 {
@@ -64,4 +64,10 @@ int	get_max(t_box *box, int i)
 		temp = temp->next;
 	}
 	return (max);
+}
+
+void	move_aux(t_box *box)
+{
+	move_sa(box);
+	move_pb(box);
 }

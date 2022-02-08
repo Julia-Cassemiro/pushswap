@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pushswap.h"
+#include "../../includes/push_swap.h"
 
 void	aux_ss(t_list **list);
 
 void	move_sa(t_box *box)
 {
-	t_list *temp;
-	t_list *aux;
+	t_list	*temp;
+	t_list	*aux;
 
 	if (box->size_a <= 0)
 		return ;
@@ -33,8 +33,8 @@ void	move_sa(t_box *box)
 
 void	move_sb(t_box *box)
 {
-	t_list *temp;
-	t_list *aux;
+	t_list	*temp;
+	t_list	*aux;
 
 	if (box->size_b <= 1)
 		return ;

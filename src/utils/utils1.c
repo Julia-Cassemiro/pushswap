@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pushswap.h"
-
+#include "../../includes/push_swap.h"
 
 int	check_if_complete(t_box *box)
 {
@@ -24,10 +23,9 @@ int	check_if_complete(t_box *box)
 	{
 		ant_num = temp->value;
 		temp = temp->next;
-		if (ant_num > temp->value) //se for maior q o da frente, n ta organizado
+		if (ant_num > temp->value)
 			return (0);
 	}
-	printf("foi na ordem ja");
 	free_stack(box);
 	exit(1);
 	return (1);

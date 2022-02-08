@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pushswap.h"
+#include "../../includes/push_swap.h"
 
-int ft_isdigit_char(char *c, t_box *box)
+int	ft_isdigit_char(char *c, t_box *box)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (c[i] == '-' || c[i] == '+')
@@ -25,7 +25,7 @@ int ft_isdigit_char(char *c, t_box *box)
 			i++;
 		else
 		{
-			ft_putendl_fd("Parametro n é 0 a 9", 1); // ele entra aqui se n for numero
+			ft_putendl_fd("Error", 1);
 			free_stack(box);
 			exit(0);
 		}
@@ -33,9 +33,9 @@ int ft_isdigit_char(char *c, t_box *box)
 	return (1);
 }
 
-void free_stack(t_box *box)
+void	free_stack(t_box *box)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = box->stack_a;
 	if (temp != NULL)
@@ -44,11 +44,11 @@ void free_stack(t_box *box)
 		{
 			temp = temp->next;
 			free(box->stack_a);
-			box->stack_a = temp; // para igualar as posiçoçes, e elas apontarem para o mesmo.
+			box->stack_a = temp;
 		}
 	}
-	free(box->stack_a);	 // ele ta olhando a proxima, ent ele para no ultimo, pq ele achou o null e n vai conseguir executar a ultia vez
-	if (box->size_b > 0) // se o b tem mais de um conteudo
+	free(box->stack_a);
+	if (box->size_b > 0)
 	{
 		temp = box->stack_b;
 		while (temp->next)
@@ -59,13 +59,13 @@ void free_stack(t_box *box)
 		}
 	}
 	free(box->stack_b);
-	return;
+	return ;
 }
 
-int ft_atoi(const char *str, t_box *box)
+int	ft_atoi(const char *str, t_box *box)
 {
-	long result;
-	int sign;
+	long	result;
+	int		sign;
 
 	result = 0;
 	sign = 1;
@@ -88,36 +88,34 @@ int ft_atoi(const char *str, t_box *box)
 	return ((int)(result * sign));
 }
 
-int check_list(t_box *box, int box_int)
+int	check_list(t_box *box, int box_int)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = box->stack_a;
 	if (temp->next == NULL)
 		return (1);
 	while (temp->next != NULL)
 	{
-		if (temp->value == box_int) // caso carneiro ta no meio da cerca, se a cerca for igual ao carneito, é pesadelo
+		if (temp->value == box_int)
 		{
 			ft_putendl_fd("Error", 1);
 			free_stack(box);
 			exit(1);
 		}
-		temp = temp->next; // passa a referencia do proximo
+		temp = temp->next;
 	}
 	return (1);
 }
 
-t_list *new_box(int box_int)
+t_list	*new_box(int box_int)
 {
-	t_list *new;
+	t_list	*new;
 
 	new = (t_list *)ft_calloc(1, sizeof(t_list));
 	if (new == NULL)
 		exit(1);
-
 	new->next = NULL;
 	new->value = box_int;
-
 	return (new);
 }

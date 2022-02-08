@@ -52,7 +52,7 @@ $(P_OBJ)%.o: $(P_SRC)%.c
 
 #VALGRIND--|
 val:
-	valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes --log-file=valgrind-out.txt ./$(NAME) $(a)
+	valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./$(NAME) $(ARG)
 
 clean:
 	@$(RM) $(P_OBJ)
